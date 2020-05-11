@@ -3,7 +3,7 @@ import './style/cmps/App.css';
 
 import {Home} from './pages/Home'
 import {About} from './pages/About'
-import {ToyApp} from './pages/ToyApp'
+import ToyApp from './pages/ToyApp'
 import {ToyEdit} from './pages/ToyEdit'
 
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom' 

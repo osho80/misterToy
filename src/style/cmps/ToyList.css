@@ -1,0 +1,8 @@
+.toy-item {
+    background-color: aquamarine;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 0 20px 20px 0;
+    display: inline-block;
+
+}

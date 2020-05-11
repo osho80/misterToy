@@ -14,16 +14,14 @@ export function loadToys() {
     } 
 }
 
-// Above is mine refactored
-
-// export function loadTodos() {
-//     return (dispatch) => {
-//         todoService.query()
-//         .then(todos => {
-//             dispatch(setTodos(todos))
-//             })
-//         }
-//     }
+export function loadToy(id) {
+    return dispatch => {
+        toyService.getById(id)
+            .then(toy=> {
+                dispatch({ type: 'SET_TOY', toy })
+            })
+    }
+}
     
 // export function loadUser() {
 //     return (dispatch) => {

@@ -177,6 +177,8 @@ export default {
 // } 
 
 function query(){
+    console.log('sending axios request');
+    
     return axios.get(baseUrl)
         .then(res=> res.data);
 }
