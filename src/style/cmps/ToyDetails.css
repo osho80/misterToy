@@ -1,0 +1,7 @@
+.instock {
+    color: green;
+}
+
+.out-of-stock {
+    color: red;
+}

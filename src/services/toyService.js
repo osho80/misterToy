@@ -172,9 +172,6 @@ export default {
     save
 }
 
-// function query() {
-//     return toys;
-// } 
 
 function query(){
     console.log('sending axios request');
@@ -183,14 +180,19 @@ function query(){
         .then(res=> res.data);
 }
 
+
 function getById(id) {
-    return toys.find(toy=> toy._id === parseInt(id))
+    return axios.get(`${baseUrl}/${id}`)
+        .then(res=> res.data)
 }
 
-function remove(id) {
-    const idx = toys.findIndex(toy => toy._id === id)
-    toys.splice(idx, 1);
+function remove(id){
+    return axios.delete(`${baseUrl}/${id}`)
 }
+// function remove(id) {
+//     const idx = toys.findIndex(toy => toy._id === id)
+//     toys.splice(idx, 1);
+// }
 
 function save(toy) {
     if(toy._id) {

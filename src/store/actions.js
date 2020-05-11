@@ -22,6 +22,13 @@ export function loadToy(id) {
             })
     }
 }
+
+export function removeToy(toyId) {
+    return dispatch => {
+        toyService.remove(toyId)
+            .then(()=> dispatch({ type: 'REMOVE_TOY', toyId}))
+    }
+}
     
 // export function loadUser() {
 //     return (dispatch) => {

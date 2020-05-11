@@ -1,5 +1,6 @@
 let initialState = {
     toys: [],
+    currToy: null,
     filterBy: null,
 };
 
@@ -8,6 +9,9 @@ export function rootReducer(state = initialState, action = {}) {
     switch (action.type) {
         case 'SET_TOYS':
             return { ...state, toys: action.toys }
+
+        case 'SET_TOY':
+            return { ...state, currToy: action.toy }
 
         case 'TOY_ADD':
             return { ...state, toys: [...state.toys, action.toy] }
@@ -18,7 +22,7 @@ export function rootReducer(state = initialState, action = {}) {
             updatedtoys[toyIdx] = { ...action.toy }
             return { ...state, toys: updatedtoys }
 
-        case 'TOY_REMOVE':
+        case 'REMOVE_TOY':
             return { ...state, toys: state.toys.filter(toy => toy._id !== action.toyId) }
 
         case 'SET_FILTER':

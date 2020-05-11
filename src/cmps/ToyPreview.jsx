@@ -16,7 +16,7 @@ export class ToyPreview extends React.Component {
     }
 
     componentDidMount() {
-        console.log('ToyPreview props:', this.props);
+        // console.log('ToyPreview props:', this.props);
         const { toy } = this.props
         this.setState({ toy })
     }
@@ -32,7 +32,9 @@ export class ToyPreview extends React.Component {
                 <h2>{toy.price}</h2>
                 <h3>Category: {toy.type}</h3>
                 <h4>Instock? {toy.inStock}</h4>
-                <button onClick={()=> this.props.onEditToy(toy._id)}>Details</button>
+                {/* <button onClick={()=> this.props.onEditToy(toy._id)}>Details</button> */}
+                <button onClick={()=> this.props.onDetails(toy._id)}>Details</button>
+                <button onClick={()=> this.props.onRemove(toy._id)}>Delete</button>
 
             </div>
         )

@@ -5,6 +5,8 @@ import {Home} from './pages/Home'
 import {About} from './pages/About'
 import ToyApp from './pages/ToyApp'
 import {ToyEdit} from './pages/ToyEdit'
+import ToyDetails from './pages/ToyDetails'
+
 
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom' 
 
@@ -24,6 +26,7 @@ function App() {
           <Route component = {Home} path="/home"></Route>
           <Route component = {About} path="/about"></Route>
           <Route exact component = {ToyEdit} path="/toy/edit/:toyId"></Route>
+          <Route exact component = {ToyDetails} path="/toy/:toyId"></Route>
           <Route component = {ToyApp} path="/toy"></Route>
 
         </Switch>
