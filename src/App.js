@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './style/cmps/App.css';
+
+import {Home} from './pages/Home'
+import {About} from './pages/About'
+import {ToyApp} from './pages/ToyApp'
+import {ToyEdit} from './pages/ToyEdit'
+
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom' 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Router>
+        <header className="app-header">
+          Mister Toy
+        </header>
+        <Switch>
+          <Route component = {Home} path="/home"></Route>
+          <Route component = {About} path="/about"></Route>
+          <Route exact component = {ToyEdit} path="/toy/edit/:toyId"></Route>
+          <Route component = {ToyApp} path="/toy"></Route>
+
+        </Switch>
+       </Router>
     </div>
   );
 }
