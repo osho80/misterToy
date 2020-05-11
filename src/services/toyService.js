@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 var toys = [
     {
         "_id": 6473,
@@ -161,7 +163,7 @@ var toys = [
     }
 ]
 
-
+const baseUrl = 'http://localhost:3000/toy';
 
 export default {
     query,
@@ -170,9 +172,14 @@ export default {
     save
 }
 
-function query() {
-    return toys;
-} 
+// function query() {
+//     return toys;
+// } 
+
+function query(){
+    return axios.get(baseUrl)
+        .then(res=> res.data);
+}
 
 function getById(id) {
     return toys.find(toy=> toy._id === parseInt(id))

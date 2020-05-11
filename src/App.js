@@ -6,14 +6,19 @@ import {About} from './pages/About'
 import {ToyApp} from './pages/ToyApp'
 import {ToyEdit} from './pages/ToyEdit'
 
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom' 
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom' 
 
 function App() {
   return (
     <div className="app">
       <Router>
         <header className="app-header">
-          Mister Toy
+          <h1>
+            Mister Toy
+          </h1>
+          <Link to="/home">Home</Link> |
+          <Link to="/about">About</Link> |
+          <Link to="/toy">Store</Link>
         </header>
         <Switch>
           <Route component = {Home} path="/home"></Route>
