@@ -4,7 +4,7 @@ import './style/cmps/App.css';
 import {Home} from './pages/Home'
 import {About} from './pages/About'
 import ToyApp from './pages/ToyApp'
-import {ToyEdit} from './pages/ToyEdit'
+import ToyEdit from './pages/ToyEdit'
 import ToyDetails from './pages/ToyDetails'
 
 
@@ -25,7 +25,7 @@ function App() {
         <Switch>
           <Route component = {Home} path="/home"></Route>
           <Route component = {About} path="/about"></Route>
-          <Route exact component = {ToyEdit} path="/toy/edit/:toyId"></Route>
+          <Route component = {ToyEdit} path="/toy/edit/:toyId?"></Route>
           <Route exact component = {ToyDetails} path="/toy/:toyId"></Route>
           <Route component = {ToyApp} path="/toy"></Route>
 

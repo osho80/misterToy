@@ -13,10 +13,10 @@ export function rootReducer(state = initialState, action = {}) {
         case 'SET_TOY':
             return { ...state, currToy: action.toy }
 
-        case 'TOY_ADD':
+        case 'ADD_TOY':
             return { ...state, toys: [...state.toys, action.toy] }
 
-        case 'TOY_UPDATE':
+        case 'UPDATE_TOY':
             const toyIdx = state.toys.findIndex(toy => toy._id === action.toy._id)
             const updatedtoys = state.toys.slice()
             updatedtoys[toyIdx] = { ...action.toy }

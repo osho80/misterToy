@@ -29,6 +29,14 @@ export function removeToy(toyId) {
             .then(()=> dispatch({ type: 'REMOVE_TOY', toyId}))
     }
 }
+
+export function saveToy(toy){
+    return dispatch => {
+        const type = toy._id ? 'UPDATE_TOY' : 'ADD_TOY';
+        toyService.save(toy)
+            .then(savedToy => dispatch({ type, toy: savedToy}))
+    }
+}
     
 // export function loadUser() {
 //     return (dispatch) => {

@@ -18,8 +18,8 @@ class ToyApp extends React.Component {
         this.props.history.push(`/toy/${id}`)
     }
 
-    onAddToy =() => {
-        this.props.history.push(`/toy/${id}`)
+    onAddToy = () => {
+        this.props.history.push(`/toy/edit`)
     }
 
     // loadToys = () => {
@@ -46,7 +46,7 @@ class ToyApp extends React.Component {
     render() {
         return(
             <div className="toy-app-container">
-                <button onCLick={()=> this.onAddToy}>Add Toy</button>
+                <button onClick={this.onAddToy}>Add Toy</button>
                 <ToyList toys={this.props.toys} onRemove={this.props.removeToy} onDetails={this.onDetails}></ToyList>
                 {/* <ToyList toys={toys} onEditToy={this.onEditToy}></ToyList> */}
                 {/* <button onClick={this.test}>Test</button> */}
