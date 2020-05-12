@@ -3,6 +3,7 @@ import './style/cmps/App.css';
 
 import {Home} from './pages/Home'
 import {About} from './pages/About'
+import Charts from './pages/Charts'
 import ToyApp from './pages/ToyApp'
 import ToyEdit from './pages/ToyEdit'
 import ToyDetails from './pages/ToyDetails'
@@ -20,11 +21,13 @@ function App() {
           </h1>
           <Link to="/home">Home</Link> |
           <Link to="/about">About</Link> |
-          <Link to="/toy">Store</Link>
+          <Link to="/toy">Store</Link> | 
+          <Link to="/charts">Charts</Link>
         </header>
         <Switch>
           <Route component = {Home} path="/home"></Route>
           <Route component = {About} path="/about"></Route>
+          <Route component = {Charts} path="/charts"></Route>
           <Route component = {ToyEdit} path="/toy/edit/:toyId?"></Route>
           <Route exact component = {ToyDetails} path="/toy/:toyId"></Route>
           <Route component = {ToyApp} path="/toy"></Route>

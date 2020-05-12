@@ -5,9 +5,9 @@ import toyService from '../services/toyService.js'
 
 // THUNK
 
-export function loadToys() {
+export function loadToys(filterBy = null, sortBy = null) {
     return (dispatch)=> {
-        toyService.query()
+        toyService.query(filterBy, sortBy)
             .then(toys=> {
                 dispatch({ type: 'SET_TOYS', toys})
             })

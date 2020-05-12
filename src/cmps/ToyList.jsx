@@ -4,8 +4,6 @@ import '../style/cmps/ToyList.css'
 
 export function ToyList(props) {
     const { toys } = props
-    console.log('ToyList props: ', props);
-    
     
     return (
         <section className="toy-list">

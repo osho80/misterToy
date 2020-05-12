@@ -173,10 +173,24 @@ export default {
 }
 
 
-function query(){
-    console.log('sending axios request');
+function query(filterBy, sortBy){
+    // console.log('sortBy', sortBy);
+    // console.log('filterBy', filterBy);
+    let queryString = '';
+    if (filterBy) {
+        if (filterBy.toyName) queryString += `name_like=${filterBy.toyName}`;
+        if (filterBy.toyType && filterBy.toyType !== 'All') queryString += `&type=${filterBy.toyType}`;
+        if (filterBy.isInStock) queryString += `&inStock=${filterBy.isInStock}`
+    }
+    if (sortBy) {
+        if (sortBy === 'name') queryString += `&_sort=name&_order=asc`;
+        if (sortBy === 'price') queryString += `&_sort=price&_order=asc`;
+    }
+
+    console.log('queryString', queryString);
     
-    return axios.get(baseUrl)
+
+    return axios.get(`${baseUrl}?${queryString}`)
         .then(res=> res.data);
 }
 
